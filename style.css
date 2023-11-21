@@ -50,14 +50,13 @@ a {
   height: 760px;
   color: #fff;
 }
-.index-content h1 {
-  margin-bottom: 20px;
-  font-size: 116px;
-  letter-spacing: 2px;
+.index-content h1 img {
+  width: 350px;
+  margin-left: -46px;
 }
 .index-content h5 {
   position: relative;
-  margin-bottom: 40px;
+  margin: -120px 0 80px;
   padding-bottom: 6px;
   font-size: 1.5rem;
   word-spacing: 2px;
@@ -203,13 +202,23 @@ a {
 .menu li .menu-text p:last-child {
   margin-bottom: 0;
 }
-.back-home {
+.bottomBtn {
   position: absolute;
-  bottom: 40px;
-  left: 25px;
-  font-size: 16px;
+  bottom: 60px;
+  font-size: 24px;
   font-weight: bold;
   color: #355379;
+}
+.back-home {
+  left: 25px;
+}
+.back-menu {
+  padding: 0 10px;
+  right: 25px;
+}
+.back-menu.active {
+  background: #fff;
+  border-radius: 12px;
 }
 .ques-container .ques-change {
   display: flex;
@@ -308,10 +317,55 @@ input[type='radio']:checked:after {
   color: #fff;
   cursor: pointer;
   margin-bottom: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .imgbox {
   width: 350px;
   height: 350px;
   margin: 20px 0;
   border: 4px solid #314e71;
+}
+.menu-fix {
+  position: absolute;
+  bottom: 100%;
+  right: 100%;
+  width: 450px;
+  height: auto;
+  display: none;
+}
+.back-menu.active .menu-fix {
+  display: block;
+}
+.menu-fix > div.warp {
+  transition: all 1s;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  backface-visibility: hidden;
+}
+.menu-fix div {
+  position: relative;
+  z-index: 5;
+}
+.menu-fix div.off {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(-180deg);
+  z-index: 2;
+}
+.menu-fix div img {
+  width: 100%;
+}
+.menu-fix.trans > div.warp {
+  transform: rotateY(180deg);
+}
+#answer {
+  margin-bottom: 100px;
+  font-size: 4rem;
+  padding: 20px;
 }
